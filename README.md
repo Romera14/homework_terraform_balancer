@@ -117,6 +117,6 @@ playbook ansible
       state: started
       enabled: yes
 ```
-![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-22%20в%2021.14.45.png)
-![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-22%20в%2021.13.44.png)
+![2](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-22%20в%2021.14.45.png)
+![3](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-22%20в%2021.13.44.png)
 
