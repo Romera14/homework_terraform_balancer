@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "yandex" {
-  token = "y0_AgAAAAAWRmE_AATuwQAAAADRep88EndWCV6zS5yJ5-q_9_Sc4_DFR7I"
+  token = ""
 #  cloud_id  = var.cloud_id
   folder_id = "b1g817nmob937losobc1"
   zone      = "ru-central1-a"
