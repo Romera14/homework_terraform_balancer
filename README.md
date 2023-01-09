@@ -217,6 +217,23 @@ resource "yandex_vpc_subnet" "subnet-1" {
   network_id     = "${yandex_vpc_network.network-1.id}"
   v4_cidr_blocks = ["192.168.10.0/24"]
 }
+resource "yandex_lb_network_load_balancer" "load_balancer" {
+  name = "load-balancer"
+  listener {
+    name = "my-listener"
+    port = 80
+  }
+  attached_target_group {
+    target_group_id = ??????
+    healthcheck {
+      name = "http"
+        http_options {
+          port = 80
+          path = "/"
+        }
+    }
+  }
+}
 ```
 ![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-28%20в%2021.17.08.png)
 ![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-28%20в%2021.17.55.png)
