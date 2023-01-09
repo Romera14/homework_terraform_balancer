@@ -121,7 +121,6 @@ playbook ansible
 ![3](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-22%20в%2021.13.44.png)
 
 ## Задание 2
-Столнулся с тем что во время команды terraform destroy сначала удаляются права у сервисного аккаунта, по этому он не может удалить группу машин, не нашел как с этим бороться. Приходилось после команды terraform destroy через web интерфейс вручную снова добавлять права аккаунту. Также не нашел как создать балансировщик для группы машин и делал это вручную через web интерфейс
 
 playbook terraform
 ```
@@ -224,7 +223,7 @@ resource "yandex_lb_network_load_balancer" "load_balancer" {
     port = 80
   }
   attached_target_group {
-    target_group_id = ??????
+    target_group_id = yandex_compute_instance_group.ig-1.load_balancer[0].target_group_id
     healthcheck {
       name = "http"
         http_options {
@@ -235,6 +234,6 @@ resource "yandex_lb_network_load_balancer" "load_balancer" {
   }
 }
 ```
-![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-28%20в%2021.17.08.png)
-![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-28%20в%2021.17.55.png)
-![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202022-12-28%20в%2021.21.04.png)
+![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202023-01-09%20в%2022.13.37.png)
+![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202023-01-09%20в%2022.14.03.png)
+![](https://github.com/Romera14/homework_terraform_balancer/blob/main/Снимок%20экрана%202023-01-09%20в%2022.15.39.png)
